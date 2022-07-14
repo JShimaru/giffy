@@ -1,14 +1,12 @@
-import { GIF_URL } from "../services/constants"
 
-
-function Gifs(props){
+function GifsButton(props){
 
     return(
         <div>
-            <h1>{props.Gifs}</h1>
+            <h1>Shhh</h1>
             <button className="moreGifs" onClick={props.onClick}>Show More...</button>
         </div>
     )
 }
 
-export default Gifs
+export default GifsButton

@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import Layout from './components/Layout';
 import GifsButton from './components/GifsButton';
 import { GIF_URL } from './services/constants';
@@ -8,19 +9,26 @@ function App() {
     const [needGifs, setNeedGifs] = useState("")
 
     async function loadGif(){
-      let url = fetch(GIF_URL)
-      console.log(url)
-      .catch(err => {
-        console.log(err)
-      })
-    
-     }
+      await axios.get(GIF_URL).then(res => {
+        setNeedGifs(res.data.data.images.original.mp4)
+        console.log(needGifs)      
+    })
+  }
+
+  async function render(){
+    await loadGif()    
+    return(
+      <>
+        <p>{needGifs}</p>
+      </>
+    )
+  }
 
 
   return (
     <div className="App">
-      <GifsButton homeGif={needGifs} onClick={loadGif}/>
-      <Layout randomGifs={needGifs} handleClick={loadGif}/>
+      <GifsButton homeGif={needGifs} onClick={render}/>
+      <Layout randomGifs={needGifs} handleClick={render}/>
     </div>
   );
 }

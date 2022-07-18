@@ -6,11 +6,11 @@ import { GIF_URL } from './services/constants';
 import { useState } from 'react';
 
 function App() {
-    const [needGifs, setNeedGifs] = useState("")
+    const [needGifs, setNeedGifs] = useState([])
 
     async function loadGif(){
       await axios.get(GIF_URL).then(res => {
-        setNeedGifs(res.data.data.images.original.mp4)
+        setNeedGifs(res.data.data.images.original.url)
         console.log(needGifs)      
     })
   }
@@ -19,7 +19,7 @@ function App() {
     await loadGif()    
     return(
       <>
-        <p>{needGifs}</p>
+        <img src={needGifs} alt=""/>
       </>
     )
   }

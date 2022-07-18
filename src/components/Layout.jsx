@@ -2,10 +2,9 @@
 function Layout(props){
     
 
-console.log(props.needGifs)
     return(
         <div>
-            <img src={props.needGifs} alt="no-gif"/>
+            <img src={props.randomGifs} alt="no-gif"/>
         </div>
     )
 }

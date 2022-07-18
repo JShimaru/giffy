@@ -5,7 +5,7 @@ function GifsButton(props){
         <div>
             <h1>Want a gif?</h1>
                 <div>
-                    <p>{props.homeGif}</p>
+                    <img src={props.homeGif} />
                 </div>
             <button className="moreGifs" onClick={props.onClick}>Show More...</button>
         </div>

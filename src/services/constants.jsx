@@ -1,1 +1,1 @@
-export const GIF_URL = 'https://api.giphy.com/v1/gifs/random?api_key=w8rp6rM3bvHEPnnPR9e6KRNk5ftSrSlS&tag=&rating=g'
+export default GIF_URL = 'https://api.giphy.com/v1/gifs/random?api_key=w8rp6rM3bvHEPnnPR9e6KRNk5ftSrSlS&tag=&rating=g'
